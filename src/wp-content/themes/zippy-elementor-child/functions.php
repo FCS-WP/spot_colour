@@ -24,3 +24,8 @@ if (!defined('THEME_URL'))
  */
 
 require_once THEME_DIR_CHILD . '/autoload.php';
+
+use App\App;
+
+
+new App();

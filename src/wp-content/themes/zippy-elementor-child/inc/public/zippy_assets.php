@@ -7,5 +7,8 @@ function shin_scripts()
 
     wp_enqueue_style('main-style-css', THEME_URL . '-child' . '/assets/dist/css/main.min.css', array(), $version, 'all');
 
+    wp_enqueue_style('slick-css', THEME_URL . '-child' . '/assets/lib/slick/slick.css', array(), $version, 'all');
+    wp_enqueue_style('slick-theme-css', THEME_URL . '-child' . '/assets/lib/slick/slick-theme.css', array(), $version, 'all');
+
     wp_enqueue_script('main-scripts-js', THEME_URL . '-child' . '/assets/dist/js/main.min.js', array('jquery'), $version, true);
 }
