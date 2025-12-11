@@ -5,34 +5,28 @@ namespace App;
 class App
 {
   public function __construct(){
-    add_filter('woocommerce_product_loop_start', [$this, 'my_custom_loop_start'], 10, 1);
-    add_action('woocommerce_before_shop_loop', [$this, 'add_wrapper_control_box'], 29);
-    add_action('woocommerce_before_shop_loop', [$this, 'my_custom_icons_after_sort'], 31);
+    add_filter('woocommerce_product_loop_start', [$this, 'change_loop_wrapper_element'], 10, 1);
+    add_action('woocommerce_before_shop_loop', [$this, 'add_switch_view_control'], 31);
   }
 
 
-  public function my_custom_loop_start($html)
+  public function change_loop_wrapper_element($html)
   {
       // Check query param `data-type`
       $view_type = isset($_GET['data-type']) ? sanitize_text_field($_GET['data-type']) : 'grid';
 
       if ($view_type === 'list') {
           // Replace default class with custom one
-          $html = '<ul class="products display-list">';
+          $html = '<ul id="fcs-products" class="products list-type">';
+      } else if($view_type === 'grid') {
+          $html = '<ul id="fcs-products" class="products elementor-grid grid-type">';
       }
 
       return $html;
   }
 
   
-
-  public function add_wrapper_control_box()
-  {
-      echo "<div class=\"ordering-and-view\">";
-  }
-
-  
-  public function my_custom_icons_after_sort()
+  public function add_switch_view_control()
   {
       $current_url = home_url(add_query_arg(null, null));
 
@@ -49,6 +43,7 @@ class App
       }
       
       ?>
+        <div class="ordering-and-view">
           <div class="shop-view-toggle">
               <a href="<?php echo esc_url($grid_url); ?>"
                   class="toggle-data-type elementor-icon <?php echo $display_type == 'grid' ? 'active' : '' ?>"

@@ -1,14 +1,16 @@
-<?php
-$full_image_url = wp_get_attachment_image_src($product->get_image_id(), 'full')[0] ?? "/wp-content/plugins/woocommerce/assets/images/placeholder.png";
-$regular_price = $product->get_regular_price();
-$sale_price = $product->get_sale_price();
+<?php 
+    $full_image_url = wp_get_attachment_image_src($product->get_image_id(), 'full')[0] ?? wc_placeholder_img_src();
+    $regular_price = $product->get_regular_price();
+    $sale_price    = $product->get_sale_price();
 ?>
-<li <?php wc_product_class('custom-loop-product', $product); ?>>
-    <div class="custom-product-item">
+<li <?php wc_product_class('fcs-loop-product', $product); ?>>
+    <div class="fcs-product-item">
         <div class="product-featured">
             <a href="<?php the_permalink(); ?>">
-                <img src="<?php echo esc_url($full_image_url); ?>" alt="<?php the_title_attribute(); ?>"
-                    class="custom-product-thumbnail" />
+                <img
+                    src="<?php echo esc_url($full_image_url); ?>"
+                    alt="<?php the_title_attribute(); ?>"
+                    class="fcs-product-thumbnail" />
             </a>
         </div>
         <div class="product-info">
@@ -16,9 +18,9 @@ $sale_price = $product->get_sale_price();
                 <a class="title-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </h3>
             <div class="product-rating">
-                <?php
-                if (wc_review_ratings_enabled()) {
-                    echo wc_get_rating_html($product->get_average_rating());
+                <?php 
+                if ( wc_review_ratings_enabled() ) {
+                    echo wc_get_rating_html( $product->get_average_rating() ); 
                 }
                 ?>
             </div>
@@ -30,25 +32,16 @@ $sale_price = $product->get_sale_price();
         <div class="product-actions">
             <div class="product-price">
                 <?php
-                if (!is_required_login_to_purchase_product($product->get_id())) {
-                    if ($product->is_on_sale() && $sale_price) {
-                        echo '<span class="has-sale regular-price"' . wc_price($regular_price) . '</span> ';
-                        echo '<span class="sale-price" style="color:red;font-weight:bold;">' . wc_price($sale_price) . '</span>';
-                    } else {
-                        echo '<span class="regular-price">' . wc_price($regular_price) . '</span>';
-                    }
+                if ($product->is_on_sale() && $sale_price) {
+                    echo '<span class="has-sale regular-price"' . wc_price($regular_price) . '</span> ';
+                    echo '<span class="sale-price" style="color:red;font-weight:bold;">' . wc_price($sale_price) . '</span>';
+                } else {
+                    echo '<span class="regular-price">' . wc_price($regular_price) . '</span>';
                 }
-
                 ?>
             </div>
-            <div style="text-align: center">
-                <?php
-                    if (!is_required_login_to_purchase_product($product->get_id())) {
-                        woocommerce_template_loop_add_to_cart();
-                    } else {
-                        echo parse_require_login_message();
-                    }
-                ?>
+            <div>
+                <?php woocommerce_template_loop_add_to_cart(); ?>
             </div>
         </div>
     </div>
