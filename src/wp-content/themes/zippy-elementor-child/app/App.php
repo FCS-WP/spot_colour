@@ -28,10 +28,7 @@ class App
 
   public function add_wrapper_control_box()
   {
-      ?>
-      <div class="ordering-and-view">
-
-          <?php
+      echo "<div class=\"ordering-and-view\">";
   }
 
   
