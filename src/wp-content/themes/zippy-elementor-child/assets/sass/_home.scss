@@ -1,0 +1,66 @@
+#home-slider {
+  .elementor-swiper-button{
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .swiper-slide-inner{
+    @media screen and (max-width: 767px) {
+      align-items: center;
+    }
+  }
+
+  .swiper-slide-contents {
+    width: 1140px;
+    max-width: 100%;
+    .elementor-slide-heading {
+      width: 50%;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+    }
+
+    .elementor-slide-description {
+      width: 50%;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .elementor-widget-icon-box {
+    .elementor-icon-box-content {
+      >.elementor-icon-box-title {
+        width: 90%;
+        margin: 0;
+        @media screen and (max-width: 767px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .feature {
+    @media screen and (max-width: 767px) {
+      position: static;
+    }
+  }
+}
+
+#faq{
+  .elementor-accordion-item{
+    + .elementor-accordion-item{
+      border-top: 1px solid white;
+    }
+  }
+}

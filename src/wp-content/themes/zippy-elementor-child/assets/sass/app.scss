@@ -1,110 +1,14 @@
+@import "header";
+@import "footer";
+@import "home";
+@import "about_us";
+@import "our_services";
+@import "contact";
 @import "shop";
 // Container form
 body{
   padding: 0 !important;
 }
-
-#header {
-  .top {
-
-    .jkit-hamburger-menu,
-    .jkit-close-menu {
-      &:focus {
-        background: none;
-      }
-    }
-
-    .elementor-widget-search {
-      form.e-search-form {
-        position: relative;
-
-        input {
-          &::placeholder {
-            color: var(--e-global-color-accent);
-          }
-
-          &::-ms-input-placeholder {
-            color: var(--e-global-color-accent);
-          }
-
-          &::-ms-input-placeholder {
-            color: var(--e-global-color-accent);
-          }
-        }
-
-        button {
-          &.e-search-submit {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-          }
-        }
-      }
-    }
-  }
-}
-
-
-#home-slider {
-  .elementor-swiper-button{
-    width: 50px;
-    height: 50px;
-    background: rgba(255,255,255,0.5);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @media screen and (max-width: 767px) {
-      display: none;
-    }
-  }
-
-  .swiper-slide-inner{
-    @media screen and (max-width: 767px) {
-      align-items: center;
-    }
-  }
-
-  .swiper-slide-contents {
-    width: 1140px;
-    max-width: 100%;
-    .elementor-slide-heading {
-      width: 50%;
-
-      @media screen and (max-width: 767px) {
-        width: 100%;
-      }
-    }
-
-    .elementor-slide-description {
-      width: 50%;
-
-      @media screen and (max-width: 767px) {
-        width: 100%;
-      }
-    }
-  }
-
-  .elementor-widget-icon-box {
-    .elementor-icon-box-content {
-      >.elementor-icon-box-title {
-        width: 90%;
-        margin: 0;
-        @media screen and (max-width: 767px) {
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  .feature {
-    @media screen and (max-width: 767px) {
-      position: static;
-    }
-  }
-}
-
 
 .section-title{
   .elementor-heading-title{
@@ -157,6 +61,10 @@ body{
         justify-content: center;
         transition: all 0.3s ease;
         border: 1px solid var( --e-global-color-primary );
+        @media screen and (max-width: 767px) {
+          top: 10%;
+          right: 10%;
+        }
       }
       &:hover{
         background: var( --e-global-color-primary );
@@ -172,41 +80,9 @@ body{
   }
 }
 
-#faq{
-  .elementor-accordion-item{
-    + .elementor-accordion-item{
-      border-top: 1px solid white;
-    }
-  }
-}
 
-#footer{
-  .elementor-widget-nav-menu{
-    ul{
-      li{
-        a{
-          position: relative;
-          &:before{
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 0;
-            background: url("/wp-content/uploads/2025/12/right-caret.png");
-            width: 9px;
-            height: 15px;
-            transform: translateY(-50%);
-            opacity: 1 !important;
-          }
-        }
-      }
-    }
-  }
-  .elementor-widget-text-editor{
-    a{
-      color: #fff;
-    }
-  }
-}
+
+
 
 .js-slider{
   style{
@@ -255,46 +131,6 @@ body{
     }
   }
 }
-
-.out_vision{
-  .elementor-widget-icon-box{
-    .elementor-widget-container{
-      .elementor-icon{
-        padding: 20px;
-        border: 1px solid var( --e-global-color-primary ) !important;
-        border-radius: 50%;
-      }
-    }
-    &:hover{
-      .elementor-widget-container{
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      }
-    }
-  }
-}
-
-
-.service-list{
-  .services{
-    .elementor-post-info__item--type-terms{
-      padding: 0 !important;
-    }
-  }
-}
-
-#contact{
-  .elementor-widget-image-box{
-    .elementor-image-box-img{
-      margin: 0;
-      img{
-        height: 250px;
-        object-fit: cover;
-      }
-    }
-  }
-}
-
-
 
 #cart_page, #checkout_page{
   #place_order, .checkout-button{

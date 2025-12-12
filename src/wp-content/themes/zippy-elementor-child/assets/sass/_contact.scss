@@ -1,0 +1,11 @@
+#contact{
+  .elementor-widget-image-box{
+    .elementor-image-box-img{
+      margin: 0;
+      img{
+        height: 250px;
+        object-fit: cover;
+      }
+    }
+  }
+}
