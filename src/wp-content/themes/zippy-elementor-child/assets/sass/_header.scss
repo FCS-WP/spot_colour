@@ -1,0 +1,40 @@
+#header {
+  .top {
+
+    .jkit-hamburger-menu,
+    .jkit-close-menu {
+      &:focus {
+        background: none;
+      }
+    }
+
+    .elementor-widget-search {
+      form.e-search-form {
+        position: relative;
+
+        input {
+          &::placeholder {
+            color: var(--e-global-color-accent);
+          }
+
+          &::-ms-input-placeholder {
+            color: var(--e-global-color-accent);
+          }
+
+          &::-ms-input-placeholder {
+            color: var(--e-global-color-accent);
+          }
+        }
+
+        button {
+          &.e-search-submit {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
