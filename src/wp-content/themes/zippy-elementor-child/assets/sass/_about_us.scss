@@ -1,0 +1,16 @@
+.out_vision{
+  .elementor-widget-icon-box{
+    .elementor-widget-container{
+      .elementor-icon{
+        padding: 20px;
+        border: 1px solid var( --e-global-color-primary ) !important;
+        border-radius: 50%;
+      }
+    }
+    &:hover{
+      .elementor-widget-container{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+    }
+  }
+}
