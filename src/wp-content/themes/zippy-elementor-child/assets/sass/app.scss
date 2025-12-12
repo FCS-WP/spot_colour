@@ -157,6 +157,10 @@ body{
         justify-content: center;
         transition: all 0.3s ease;
         border: 1px solid var( --e-global-color-primary );
+        @media screen and (max-width: 767px) {
+          top: 10%;
+          right: 10%;
+        }
       }
       &:hover{
         background: var( --e-global-color-primary );
