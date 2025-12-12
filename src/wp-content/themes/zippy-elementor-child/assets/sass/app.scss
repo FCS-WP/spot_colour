@@ -110,6 +110,9 @@ body{
   .elementor-heading-title{
     position: relative;
     padding-left: 28px;
+    @media screen and (max-width: 767px) {
+      padding-left: 23px;
+    }
     &:before{
       content: "#";
       color: var( --e-global-color-primary );
@@ -119,6 +122,9 @@ body{
       font-size: 32px;
       font-weight: bold;
       font-style: italic;
+      @media screen and (max-width: 767px) {
+          font-size: 25px;
+      }
     }
   }
   
