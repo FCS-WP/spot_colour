@@ -3,5 +3,10 @@
     .elementor-post-info__item--type-terms{
       padding: 0 !important;
     }
+    .elementor-widget-heading{
+      .elementor-heading-title{
+        min-height: 2lh;
+      }
+    }
   }
 }
